@@ -4,7 +4,7 @@ Esse foi um teste pratico feito para validar as minhas capacidades de programado
 
 # O que deveria ser feito
 
-## Mobile
+### Mobile
 Desenvolver uma Aplicação Mobile para uma escola utilizando o Flutter SDK/Dart, que contenha:
     1 - Listagem de cursos e alunos cadastrados.
     2 - Cadastro de cursos e alunos.
