@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS students
 (
     id serial PRIMARY KEY,
     name varchar(50) NOT NULL,
-    idade smallint NOT NULL
+    age smallint NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS enrollment
