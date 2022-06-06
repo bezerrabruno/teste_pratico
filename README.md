@@ -1,16 +1,12 @@
-# #Teste Prático para programador Mobile#
+# Teste Prático Programador Mobile
 
 Esse foi um teste pratico feito para validar as minhas capacidades de programador.
 
 # O que deveria ser feito
 
 ### Mobile
-Desenvolver uma Aplicação Mobile para uma escola utilizando o Flutter SDK/Dart, que contenha:
-    1 - Listagem de cursos e alunos cadastrados.
-    2 - Cadastro de cursos e alunos.
-    3 - exclusão de cursos e alunos cadastrados (desde que não esteja matriculado vinculada).
-    4 - Edição de cursos e alunos cadastrados.
-    5 - Deve haver a possibilidade de matricula de alunos em cursos
+Desenvolver uma Aplicação Mobile para uma escola utilizando o Flutter SDK/Dart, nela deve conter,listagem, cadastro, exclusão (desde que não esteja matriculado vinculada) e edição de cursos e alunos.
+Deve haver a possibilidade de matricula de alunos em cursos
 
 
 ### API
