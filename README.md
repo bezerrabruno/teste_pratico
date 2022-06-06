@@ -25,7 +25,7 @@ Para configurar esse projeto manualmente siga os passos abaixo.
     1 - Instale o 'PostgreSQL'
     2 - Crie um db com o nome de 'test_pratico'.
     3 - Rode os codigos do diretorio 'database' dentro do banco.
-    obs: O arquivo 'create' é o unico obrigatorio.
+    obs: O arquivo 'create_tables' é o unico obrigatorio.
 
 ### Configurações da API:
     1 - Instale o 'node.js'.
