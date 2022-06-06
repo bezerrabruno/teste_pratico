@@ -10,7 +10,7 @@ class EnrollmentData {
     }
 
     static createEnrollment = (courseId, studentId) => {
-        database.query(`INSERT INTO courses(courseId, studentId) VALUES(${courseId}, ${studentId})`);
+        database.query(`INSERT INTO courses(course_id, student_id) VALUES(${courseId}, ${studentId})`);
 
         return database.query('SELECT * FROM courses');
     }
