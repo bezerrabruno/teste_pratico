@@ -23,7 +23,7 @@ class CourseController {
 
     static updateCourse = async (req, res) => {
         if(req.body.name != null){
-            const response = await data.updateCourse(rq.params.id, req.body.name, req.body.description, req.body.menu);
+            const response = await data.updateCourse(req.params.id, req.body.name, req.body.description, req.body.menu);
             return res.status(200).json(response.rows);
         } else {
             return res.status(400).json({'Message' : 'Name requerido'})
@@ -31,7 +31,7 @@ class CourseController {
     }
 
     static deleteCourse = async (req, res) => {
-        const response = await data.deleteCourse(rq.params.id);
+        const response = await data.deleteCourse(req.params.id);
         return res.status(200).json(response.rows);
     }
 }
