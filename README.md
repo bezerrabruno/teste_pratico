@@ -2,7 +2,7 @@
 
 Esse foi um teste pratico feito para validar as minhas capacidades de programador.
 
-# O que deveria ser feito
+# Instruções
 
 ### Mobile
 Desenvolver uma Aplicação Mobile para uma escola utilizando o Flutter SDK/Dart, nela deve conter,listagem, cadastro, exclusão (desde que não esteja matriculado vinculada) e edição de cursos e alunos.
@@ -13,13 +13,13 @@ Deve haver a possibilidade de matricula de alunos em cursos
 Criação de API utilizando Node.js que atenda ao app utilizando o banco de dados PostgreSQL de acordo com o MER (Modelo Entidade Relacionamento).
 
 
-# Build
+# Executando
 
-Esta seção mostra como usar o app sem precisar configurar nada, apenas rodando itens já preparados.
+Para rodar o app sem precisar configurar nada siga os passos abaixo.
 
-# configs
+# Implantação
 
-Esta seção mostra como usar o app em versão do codigo.
+Para configurar esse projeto manualmente siga os passos abaixo.
 
 ### Configurações do DB:
     1 - Instale o 'PostgreSQL'
