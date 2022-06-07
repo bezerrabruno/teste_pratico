@@ -6,7 +6,7 @@ const router = express.Router();
 router.use(express.json());
 
 router.get('/course/:id', (req, res) => {
-    controller.getEnrollmentByCourseId(res);
+    controller.getEnrollmentByCourseId(req, res);
 });
 
 router.get('/student/:id', (req, res) => {

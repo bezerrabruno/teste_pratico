@@ -24,7 +24,7 @@ class CourseController {
     static updateCourse = async (req, res) => {
         if(req.body.name != null){
             const response = await data.updateCourse(req.params.id, req.body.name, req.body.description, req.body.menu);
-            return res.status(200).json(response.rows);
+            return res.status(200).json(response.rows.at(0));
         } else {
             return res.status(400).json({'Message' : 'Name requerido'})
         }

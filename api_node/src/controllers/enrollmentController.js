@@ -4,12 +4,12 @@ const data = require('../data/enrollmentData');
 class EnrollmentDataController {
     static getEnrollmentByCourseId = async (req, res) => {
         const response = await data.getEnrollmentByCourseId(req.params.id);
-            return res.status(200).json(response.rows.at(0));
+            return res.status(200).json(response.rows);
     }
 
     static getEnrollmentByStudentId = async (req, res) => {
         const response = await data.getEnrollmentByStudentId(req.params.id);
-            return res.status(200).json(response.rows.at(0));
+            return res.status(200).json(response.rows);
     }
 
     static createEnrollmentByCourse = async (req, res) => {

@@ -2,14 +2,15 @@ const database = require('../config/db_connect');
 
 class EnrollmentData {
     static getEnrollmentByCourseId = (courseId) => {
-        database.query(`SELECT name, age FROM students
-                                JOIN enrollment 
-                                ON enrollment.student_id = students.id 
-                                AND enrollment.course_id = ${courseId}`);
+        return database.query(`SELECT * FROM students
+        JOIN enrollment 
+        ON enrollment.student_id = students.id 
+        AND enrollment.course_id = ${courseId}`
+        );
     }
 
     static getEnrollmentByStudentId = (studentId) => {
-        return database.query(`SELECT name, description, menu FROM courses
+        return database.query(`SELECT * FROM courses
                                 JOIN enrollment 
                                 ON enrollment.course_id = courses.id 
                                 AND enrollment.student_id = ${studentId}`);
