@@ -10,15 +10,15 @@ class StudentData {
     }
 
     static createStudent = (name, age) => {
-        await database.query(`INSERT INTO students(name, age) VALUES('${name}', ${age})`);
+        database.query(`INSERT INTO students(name, age) VALUES('${name}', ${age})`);
 
-        return database.query('SELECT * FROM students');
+        return this.getStudents();
     }
 
     static updateStudent = (id, name, age) => {
-        await database.query(`UPDATE students SET name = '${name}', age ='${age}' WHERE id = ${id}`);
+        database.query(`UPDATE students SET name = '${name}', age ='${age}' WHERE id = ${id}`);
 
-        return database.query(`SELECT * FROM students WHERE id = ${id}`);
+        return this.getStudentByIds(id);
     }
     
     static deleteStudent = (id) => {

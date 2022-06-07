@@ -2,28 +2,43 @@ const database = require('../config/db_connect');
 
 class EnrollmentData {
     static getEnrollmentByCourseId = (courseId) => {
-        await database.query(`SELECT * FROM enrollment WHERE courseId = ${courseId}`);
+        database.query(`SELECT name, age FROM students
+                                JOIN enrollment 
+                                ON enrollment.student_id = students.id 
+                                AND enrollment.course_id = ${courseId}`);
     }
 
     static getEnrollmentByStudentId = (studentId) => {
-        return database.query(`SELECT * FROM enrollment WHERE studentId = ${studentId}`);
+        return database.query(`SELECT name, description, menu FROM courses
+                                JOIN enrollment 
+                                ON enrollment.course_id = courses.id 
+                                AND enrollment.student_id = ${studentId}`);
     }
 
     static createEnrollmentByCourse = (courseId, studentId) => {
-        await database.query(`INSERT INTO enrollment(course_id, student_id) VALUES(${courseId}, ${studentId})`);
+        database.query(`INSERT INTO enrollment(course_id, student_id) VALUES(${courseId}, ${studentId})`);
 
-        return database.query(`SELECT * FROM enrollment WHERE courseId = ${courseId}`);
+        return this.getEnrollmentByCourseId(courseId);
     }
 
     static createEnrollmentByStudent = (courseId, studentId) => {
-        await database.query(`INSERT INTO enrollment(course_id, student_id) VALUES(${courseId}, ${studentId})`);
+        database.query(`INSERT INTO enrollment(course_id, student_id) VALUES(${courseId}, ${studentId})`);
 
-        return database.query('SELECT * FROM enrollment');
+        return this.getEnrollmentByCourseId(studentId);
     }
 
-    static deleteEnrollment = (id) => {
-        return database.query(`DELETE FROM enrollment WHERE courseId = ${courseId}`);
+    static deleteEnrollmentByCourse = (courseId) => {
+        database.query(`DELETE FROM enrollment WHERE course_id = ${courseId}`);
+
+        return this.getEnrollmentByCourseId(courseId);
     }
+
+    static deleteEnrollmentByStudent = (studentId) => {
+        database.query(`DELETE FROM enrollment WHERE student_id = ${studentId}`);
+
+        return this.getEnrollmentByCourseId(studentId);
+    }
+
 }
 
 module.exports = EnrollmentData;
