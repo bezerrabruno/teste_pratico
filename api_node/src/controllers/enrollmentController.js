@@ -31,13 +31,21 @@ class EnrollmentDataController {
     }
 
     static deleteEnrollmentByCourse = async (req, res) => {
-        const response = await data.deleteEnrollmentByCourse(req.params.id);
+        if(req.body.courseId != null && req.body.studentId != null){
+            const response = await data.deleteEnrollmentByCourse(req.body.courseId, req.body.studentId);
         return res.status(200).json(response.rows);
+        } else {
+            return res.status(400).json({'Message' : 'Erro desconhecido'})
+        }        
     }
 
     static deleteEnrollmentByStudent = async (req, res) => {
-        const response = await data.deleteEnrollmentByStudent(req.params.id);
-        return res.status(200).json({'message': 'Deletado com sucesso'});
+        if(req.body.courseId != null && req.body.studentId != null){
+            const response = await data.deleteEnrollmentByStudent(req.body.courseId, req.body.studentId);
+        return res.status(200).json(response.rows);
+        } else {
+            return res.status(400).json({'Message' : 'Erro desconhecido'})
+        }
     }
 }
 

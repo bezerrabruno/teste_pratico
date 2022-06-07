@@ -29,6 +29,7 @@ class EnrollmentData {
     }
 
     static deleteEnrollmentByCourse = (courseId, studentId) => {
+
         database.query(`DELETE FROM enrollment WHERE course_id = ${courseId} AND student_id = ${studentId}`);
 
         return this.getEnrollmentByCourseId(courseId);

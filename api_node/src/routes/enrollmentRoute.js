@@ -21,11 +21,11 @@ router.post('/student', (req, res) => {
     controller.createEnrollmentByStudent(req, res);
 })
 
-router.delete('/course/:id', (req, res) => {
+router.post('/course/delete', (req, res) => {
     controller.deleteEnrollmentByCourse(req, res);
 })
 
-router.delete('/student/:id', (req, res) => {
+router.post('/student/delete', (req, res) => {
     controller.deleteEnrollmentByStudent(req, res);
 })
 
