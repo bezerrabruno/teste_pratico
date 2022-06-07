@@ -12,11 +12,6 @@ Deve haver a possibilidade de matricula de alunos em cursos
 ### API
 Criação de API utilizando Node.js que atenda ao app utilizando o banco de dados PostgreSQL de acordo com o MER (Modelo Entidade Relacionamento).
 
-
-# Executando
-
-Para rodar o app sem precisar configurar nada siga os passos abaixo.
-
 # Implantação
 
 Para configurar esse projeto manualmente siga os passos abaixo.
@@ -29,9 +24,10 @@ Para configurar esse projeto manualmente siga os passos abaixo.
 
 ### Configurações da API:
     1 - Instale o 'node.js'.
-    1 - Entre em 'api_node/src/config/de_config.js' confirme os dados de 'client'.
+    1 - Entre em 'api_node/src/config/db_config.js' e confirme os dados de 'client'.
     2 - Rode a api.
 
 ### Configurações do App:
     1 - Verifique se o Flutter está na versão 3.0.0 ou maior.
-    2 - Rode o app.
+    2 - Entre em 'app_mobile/lib/app/core/shared/utils/api.base.dart' e confirme o seu IP
+    3 - Rode o app em AVD.
