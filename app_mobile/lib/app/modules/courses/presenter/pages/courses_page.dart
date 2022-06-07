@@ -30,6 +30,7 @@ class _CoursesPageState extends State<CoursesPage> {
             body: Center(
               child: Text(
                 'Erro ao carregar os Cursos',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 64,
                 ),
