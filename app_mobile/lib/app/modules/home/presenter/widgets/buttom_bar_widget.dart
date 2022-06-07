@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -46,7 +44,7 @@ class ButtomBarWidget extends StatelessWidget {
                                 size: 35,
                               ),
                         Text(
-                          'Courses',
+                          'Cursos',
                           style: TextStyle(
                             fontSize: 12,
                             color: controller.page == 0
@@ -79,7 +77,7 @@ class ButtomBarWidget extends StatelessWidget {
                               size: 35,
                             ),
                       Text(
-                        'Students',
+                        'Alunos',
                         style: TextStyle(
                           fontSize: 12,
                           color: controller.page == 1
@@ -111,7 +109,7 @@ class ButtomBarWidget extends StatelessWidget {
                               size: 35,
                             ),
                       Text(
-                        'Settings',
+                        'Menu',
                         style: TextStyle(
                           fontSize: 12,
                           color: controller.page == 2

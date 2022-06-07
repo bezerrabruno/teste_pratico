@@ -1,19 +1,20 @@
 import 'package:get/get.dart';
 
-import '../infra/interfaces/enrollment_datasource.dart';
 import '/app/core/shared/utils/api_base.dart';
 import '/app/core/shared/utils/failures_defalt.dart';
 
-class EnrollmentDatasourceImpl implements EnrollmentDatasource {
+import '../infra/interfaces/student_datasource.dart';
+
+class StudentInfoDatasourceImpl implements StudentInfoDatasource {
   final GetConnect _connect;
 
-  const EnrollmentDatasourceImpl(this._connect);
+  const StudentInfoDatasourceImpl(this._connect);
 
   @override
-  Future<List> get(int id) async {
+  Future<Map> get(int id) async {
     try {
       final response = await _connect.get(
-        '${ApiBase.url}/enrollment/course/$id',
+        '${ApiBase.url}/students/$id',
       );
 
       if (response.statusCode == 200) {
@@ -27,11 +28,11 @@ class EnrollmentDatasourceImpl implements EnrollmentDatasource {
   }
 
   @override
-  Future<List> add(Map enrollment) async {
+  Future<Map> update(int id, Map course) async {
     try {
-      final response = await _connect.post(
-        '${ApiBase.url}/enrollment/course',
-        enrollment,
+      final response = await _connect.put(
+        '${ApiBase.url}/students/$id',
+        course,
       );
 
       if (response.statusCode == 200) {
@@ -45,18 +46,16 @@ class EnrollmentDatasourceImpl implements EnrollmentDatasource {
   }
 
   @override
-  Future<List> delete(int courseId, int studentId) async {
+  Future<String> delete(int id) async {
     try {
-      final response = await _connect.post(
-        '${ApiBase.url}/enrollment/course/delete',
-        {
-          'courseId': courseId,
-          'studentId': studentId,
-        },
+      final response = await _connect.delete(
+        '${ApiBase.url}/students/$id',
       );
 
+      print(response.body);
+
       if (response.statusCode == 200) {
-        return response.body;
+        return 'Success';
       } else {
         throw FailureApp();
       }

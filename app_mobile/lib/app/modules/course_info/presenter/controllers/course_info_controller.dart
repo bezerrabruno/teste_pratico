@@ -58,7 +58,6 @@ class CourseInfoController extends GetxController {
 
     result.fold(
       (l) {
-        print(l);
         state = StatusType.error;
       },
       (r) {
@@ -75,7 +74,6 @@ class CourseInfoController extends GetxController {
 
     result.fold(
       (l) {
-        print(l);
         state = StatusType.error;
       },
       (r) {
@@ -93,7 +91,6 @@ class CourseInfoController extends GetxController {
 
     result.fold(
       (l) {
-        print(l);
         state = StatusType.error;
       },
       (r) {
@@ -114,7 +111,6 @@ class CourseInfoController extends GetxController {
 
     result.fold(
       (l) {
-        print(l);
         state = StatusType.error;
       },
       (r) {
@@ -131,7 +127,6 @@ class CourseInfoController extends GetxController {
 
     result.fold(
       (l) {
-        print(l);
         state = StatusType.error;
       },
       (r) {
@@ -149,7 +144,6 @@ class CourseInfoController extends GetxController {
 
     result.fold(
       (l) {
-        print(l);
         state = StatusType.error;
       },
       (r) {

@@ -1,20 +1,20 @@
 import 'package:app_mobile/app/core/shared/utils/enums/status_type.dart';
-import 'package:app_mobile/app/modules/courses/presenter/widgets/popup_add_course_widget.dart';
+import 'package:app_mobile/app/modules/students/presenter/widgets/popup_add_student_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controllers/course_controller.dart';
-import '../widgets/card_course_widget.dart';
+import '../controllers/student_controller.dart';
+import '../widgets/card_student_widget.dart';
 
-class CoursesPage extends StatefulWidget {
-  const CoursesPage({Key? key}) : super(key: key);
+class StudantsPage extends StatefulWidget {
+  const StudantsPage({Key? key}) : super(key: key);
 
   @override
-  State<CoursesPage> createState() => _CoursesPageState();
+  State<StudantsPage> createState() => _StudantsPageState();
 }
 
-class _CoursesPageState extends State<CoursesPage> {
-  final controller = Get.find<CourseController>();
+class _StudantsPageState extends State<StudantsPage> {
+  final controller = Get.find<StudentController>();
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +28,7 @@ class _CoursesPageState extends State<CoursesPage> {
           return const Scaffold(
             body: Center(
               child: Text(
-                'Erro ao carregar os Cursos',
-                textAlign: TextAlign.center,
+                'Erro ao carregar os Alunos',
                 style: TextStyle(
                   fontSize: 64,
                 ),
@@ -39,17 +38,17 @@ class _CoursesPageState extends State<CoursesPage> {
         case StatusType.success:
           return Scaffold(
             floatingActionButton: FloatingActionButton(
-              onPressed: () => Get.dialog(PopUpAddCourseWidget()),
+              onPressed: () => Get.dialog(PopUpAddStudentWidget()),
               child: const Icon(Icons.add, size: 32),
             ),
             bottomNavigationBar: const SizedBox(
               height: kToolbarHeight,
             ),
             body: ListView.builder(
-              itemCount: controller.courses.length,
+              itemCount: controller.students.length,
               itemBuilder: (context, item) {
-                return CardCourseWidget(
-                  course: controller.courses[item],
+                return CardStudentWidget(
+                  student: controller.students[item],
                 );
               },
             ),

@@ -10,9 +10,9 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   AppBarWidget({Key? key}) : super(key: key);
 
   final _titles = <String>[
-    'Courses',
-    'Students',
-    'Settings',
+    'Cursos',
+    'Alunos',
+    'Menu',
   ];
 
   @override

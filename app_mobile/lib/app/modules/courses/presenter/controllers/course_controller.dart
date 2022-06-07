@@ -44,7 +44,6 @@ class CourseController extends GetxController {
 
     result.fold(
       (l) {
-        print(l);
         state = StatusType.error;
       },
       (r) {
@@ -62,7 +61,6 @@ class CourseController extends GetxController {
 
     result.fold(
       (l) {
-        print(l);
         state = StatusType.error;
       },
       (r) {
