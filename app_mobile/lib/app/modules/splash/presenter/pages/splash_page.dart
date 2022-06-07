@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
-class SplashPage extends StatelessWidget {
+import '../controllers/splash_controller.dart';
+
+class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
+
+  @override
+  State<SplashPage> createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
+  final controller = Get.find<SplashController>();
+
+  late final AnimationController _controller = AnimationController(
+    duration: const Duration(seconds: 1),
+    vsync: this,
+  )..forward();
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +30,14 @@ class SplashPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Center(
-                child: SvgPicture.asset(
-                  'assets/images/logo-primary.svg',
+                child: ScaleTransition(
+                  scale: CurvedAnimation(
+                    parent: _controller,
+                    curve: Curves.fastOutSlowIn,
+                  ),
+                  child: SvgPicture.asset(
+                    'assets/images/logo-primary.svg',
+                  ),
                 ),
               ),
               Expanded(
