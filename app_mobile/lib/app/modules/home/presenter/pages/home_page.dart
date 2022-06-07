@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _pages = <Widget>[
     const CoursesPage(),
     const StudantsPage(),
-    const Scaffold(backgroundColor: Colors.pink),
+    const Scaffold(),
   ];
 
   @override
