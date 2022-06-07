@@ -25,19 +25,19 @@ class EnrollmentData {
     static createEnrollmentByStudent = (courseId, studentId) => {
         database.query(`INSERT INTO enrollment(course_id, student_id) VALUES(${courseId}, ${studentId})`);
 
-        return this.getEnrollmentByCourseId(studentId);
+        return this.getEnrollmentByStudentId(studentId);
     }
 
-    static deleteEnrollmentByCourse = (courseId) => {
-        database.query(`DELETE FROM enrollment WHERE course_id = ${courseId}`);
+    static deleteEnrollmentByCourse = (courseId, studentId) => {
+        database.query(`DELETE FROM enrollment WHERE course_id = ${courseId} AND student_id = ${studentId}`);
 
         return this.getEnrollmentByCourseId(courseId);
     }
 
-    static deleteEnrollmentByStudent = (studentId) => {
-        database.query(`DELETE FROM enrollment WHERE student_id = ${studentId}`);
+    static deleteEnrollmentByStudent = (courseId, studentId) => {
+        database.query(`DELETE FROM enrollment WHERE course_id = ${courseId} AND student_id = ${studentId}`);
 
-        return this.getEnrollmentByCourseId(studentId);
+        return this.getEnrollmentByStudentId(studentId);
     }
 
 }
