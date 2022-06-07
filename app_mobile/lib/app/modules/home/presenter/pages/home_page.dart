@@ -5,6 +5,8 @@ import '../controllers/home_controller.dart';
 import '../widgets/app_bar_widget.dart';
 import '../widgets/buttom_bar_widget.dart';
 
+import '../../../courses/presenter/pages/courses_page.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -16,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   final controller = Get.find<HomeController>();
 
   final List<Widget> _pages = <Widget>[
-    const Scaffold(backgroundColor: Colors.blue),
+    const CoursesPage(),
     const Scaffold(backgroundColor: Colors.amber),
     const Scaffold(backgroundColor: Colors.pink),
   ];
