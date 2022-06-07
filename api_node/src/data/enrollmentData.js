@@ -12,11 +12,11 @@ class EnrollmentData {
     static createEnrollment = (courseId, studentId) => {
         database.query(`INSERT INTO courses(course_id, student_id) VALUES(${courseId}, ${studentId})`);
 
-        return database.query('SELECT * FROM courses');
+        return database.query('SELECT * FROM enrollment');
     }
 
     static deleteEnrollment = (id) => {
-        return database.query('SELECT * FROM courses');
+        return database.query(`DELETE FROM enrollment WHERE id = ${id}`);
     }
 }
 

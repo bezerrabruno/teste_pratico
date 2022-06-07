@@ -22,7 +22,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    controller.deleteCourseete(req, res);
+    controller.deleteCourse(req, res);
 });
 
 module.exports = router;

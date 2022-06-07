@@ -20,7 +20,7 @@ class CourseData {
     }
 
     static deleteCourse = (id) => {
-        return database.query('SELECT * FROM courses');
+        return database.query(`DELETE FROM courses WHERE id = ${id}`);
     }
 }
 

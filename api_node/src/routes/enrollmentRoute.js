@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-    controller.deleteStudent(req, res);
+    controller.deleteEnrollment(req, res);
 })
 
  module.exports = router;
