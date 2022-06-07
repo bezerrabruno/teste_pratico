@@ -1,3 +1,5 @@
+import 'package:app_mobile/app/modules/course_info/course_info_binding.dart';
+import 'package:app_mobile/app/modules/course_info/presenter/pages/course_info_page.dart';
 import 'package:app_mobile/app/modules/students/students_binding.dart';
 import 'package:get/get.dart';
 
@@ -24,6 +26,11 @@ abstract class AppPages {
         CoursesBinding(),
         StudentBinding(),
       ],
+    ),
+    GetPage(
+      name: Routes.courseInfo,
+      page: () => const CourseInfoPage(),
+      binding: CourseInfoBinding(),
     ),
   ];
 }
