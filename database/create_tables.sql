@@ -16,6 +16,6 @@ CREATE TABLE IF NOT EXISTS students
 CREATE TABLE IF NOT EXISTS enrollment
 (
     id serial PRIMARY KEY,
-    course_id integer NOT NULL,
-    student_id integer NOT NULL
+    course_id integer REFERENCES courses (id),
+    student_id integer REFERENCES students (id)
 );
