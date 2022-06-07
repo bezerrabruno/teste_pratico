@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../students/presenter/pages/students_page.dart';
 import '../controllers/home_controller.dart';
 import '../widgets/app_bar_widget.dart';
 import '../widgets/buttom_bar_widget.dart';
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _pages = <Widget>[
     const CoursesPage(),
-    const Scaffold(backgroundColor: Colors.amber),
+    const StudantsPage(),
     const Scaffold(backgroundColor: Colors.pink),
   ];
 

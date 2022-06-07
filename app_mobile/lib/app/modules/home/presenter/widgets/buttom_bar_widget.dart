@@ -37,7 +37,7 @@ class ButtomBarWidget extends StatelessWidget {
                         controller.page == 0
                             ? Icon(
                                 Icons.book,
-                                color: colors.onPrimary,
+                                color: colors.secondary,
                                 size: 35,
                               )
                             : Icon(
@@ -70,7 +70,7 @@ class ButtomBarWidget extends StatelessWidget {
                       controller.page == 1
                           ? Icon(
                               Icons.people_alt,
-                              color: colors.onPrimary,
+                              color: colors.secondary,
                               size: 35,
                             )
                           : Icon(
@@ -102,7 +102,7 @@ class ButtomBarWidget extends StatelessWidget {
                       controller.page == 2
                           ? Icon(
                               Icons.settings,
-                              color: colors.onPrimary,
+                              color: colors.secondary,
                               size: 35,
                             )
                           : Icon(
