@@ -18,7 +18,7 @@ class StudentData {
     static updateStudent = (id, name, age) => {
         database.query(`UPDATE students SET name = '${name}', age ='${age}' WHERE id = ${id}`);
 
-        return this.getStudentByIds(id);
+        return this.getStudentById(id);
     }
     
     static deleteStudent = (id) => {
