@@ -12,17 +12,31 @@ class EnrollmentDataController {
             return res.status(200).json(response.rows.at(0));
     }
 
-    static createEnrollment = async (req, res) => {
+    static createEnrollmentByCourse = async (req, res) => {
         if(req.body.courseId != null && req.body.studentId != null){
-            const response = await data.createEnrollment(req.body.courseId, req.body.studentId);
+            const response = await data.createEnrollmentByCourse(req.body.courseId, req.body.studentId);
             return res.status(200).json(response.rows);
         } else {
             return res.status(400).json({'Message' : 'Erro desconhecido'})
         }
     }
 
-    static deleteEnrollment = async (req, res) => {
-        const response = await data.deleteEnrollment(req.params.id);
+    static createEnrollmentByStudent = async (req, res) => {
+        if(req.body.courseId != null && req.body.studentId != null){
+            const response = await data.createEnrollmentByStudent(req.body.courseId, req.body.studentId);
+            return res.status(200).json(response.rows);
+        } else {
+            return res.status(400).json({'Message' : 'Erro desconhecido'})
+        }
+    }
+
+    static deleteEnrollmentByCourse = async (req, res) => {
+        const response = await data.deleteEnrollmentByCourse(req.params.id);
+        return res.status(200).json(response.rows);
+    }
+
+    static deleteEnrollmentByStudent = async (req, res) => {
+        const response = await data.deleteEnrollmentByStudent(req.params.id);
         return res.status(200).json(response.rows);
     }
 }

@@ -13,12 +13,20 @@ router.get('/student/:id', (req, res) => {
     controller.getEnrollmentByStudentId(req, res);
 });
 
-router.post('/', (req, res) => {
-    controller.createEnrollment(req, res);
+router.post('/course', (req, res) => {
+    controller.createEnrollmentByCourse(req, res);
 })
 
-router.delete('/:id', (req, res) => {
-    controller.deleteEnrollment(req, res);
+router.post('/student', (req, res) => {
+    controller.createEnrollmentByStudent(req, res);
+})
+
+router.delete('/course/:id', (req, res) => {
+    controller.deleteEnrollmentByCourse(req, res);
+})
+
+router.delete('/student/:id', (req, res) => {
+    controller.deleteEnrollmentByStudent(req, res);
 })
 
  module.exports = router;
