@@ -37,7 +37,7 @@ class EnrollmentDataController {
 
     static deleteEnrollmentByStudent = async (req, res) => {
         const response = await data.deleteEnrollmentByStudent(req.params.id);
-        return res.status(200).json(response.rows);
+        return res.status(200).json({'message': 'Deletado com sucesso'});
     }
 }
 
