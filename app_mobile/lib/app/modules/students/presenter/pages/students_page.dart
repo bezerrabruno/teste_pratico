@@ -6,14 +6,14 @@ import 'package:get/get.dart';
 import '../controllers/student_controller.dart';
 import '../widgets/card_student_widget.dart';
 
-class StudantsPage extends StatefulWidget {
-  const StudantsPage({Key? key}) : super(key: key);
+class StudentsPage extends StatefulWidget {
+  const StudentsPage({Key? key}) : super(key: key);
 
   @override
-  State<StudantsPage> createState() => _StudantsPageState();
+  State<StudentsPage> createState() => _StudentsPageState();
 }
 
-class _StudantsPageState extends State<StudantsPage> {
+class _StudentsPageState extends State<StudentsPage> {
   final controller = Get.find<StudentController>();
 
   @override

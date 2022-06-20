@@ -10,6 +10,7 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      navigatorKey: Get.nestedKey(0),
       title: 'App Mobile',
       theme: AppTheme.theme(0),
       getPages: AppPages.pages,

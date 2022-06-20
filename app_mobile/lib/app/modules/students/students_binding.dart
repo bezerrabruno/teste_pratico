@@ -6,7 +6,7 @@ import 'domain/usecases/get_students_usecase_impl.dart';
 import 'domain/usecases/add_student_usecase_impl.dart';
 import 'presenter/controllers/student_controller.dart';
 
-class StudentBinding extends Bindings {
+class StudentsBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => GetConnect());

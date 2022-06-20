@@ -1,7 +1,10 @@
+import 'package:app_mobile/app/core/routes/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../courses/courses_binding.dart';
 import '../../../students/presenter/pages/students_page.dart';
+import '../../../students/students_binding.dart';
 import '../controllers/home_controller.dart';
 import '../widgets/app_bar_widget.dart';
 import '../widgets/buttom_bar_widget.dart';
@@ -18,23 +21,33 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final controller = Get.find<HomeController>();
 
-  final List<Widget> _pages = <Widget>[
-    const CoursesPage(),
-    const StudantsPage(),
-    const Scaffold(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(),
       bottomNavigationBar: ButtomBarWidget(),
       extendBody: true,
-      body: Obx(() {
-        return Center(
-          child: _pages[controller.page],
-        );
-      }),
+      body: Navigator(
+          key: Get.nestedKey(1),
+          initialRoute: Routes.courses,
+          onGenerateRoute: (settings) {
+            switch (settings.name) {
+              case Routes.courses:
+                return GetPageRoute(
+                  page: () => const CoursesPage(),
+                  binding: CoursesBinding(),
+                );
+              case Routes.students:
+                return GetPageRoute(
+                  page: () => const StudentsPage(),
+                  binding: StudentsBinding(),
+                );
+              default:
+                return GetPageRoute(
+                  page: () => const Scaffold(),
+                );
+            }
+          }),
     );
   }
 }

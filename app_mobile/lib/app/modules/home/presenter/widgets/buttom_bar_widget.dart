@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/routes/pages.dart';
 import '../controllers/home_controller.dart';
 
 class ButtomBarWidget extends StatelessWidget {
@@ -27,7 +28,10 @@ class ButtomBarWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100),
                   color: Colors.transparent,
                   child: InkWell(
-                    onTap: () => controller.page = 0,
+                    onTap: () {
+                      controller.page = 0;
+                      Get.toNamed(Routes.courses, id: 1);
+                    },
                     borderRadius: BorderRadius.circular(100),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -58,7 +62,10 @@ class ButtomBarWidget extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () => controller.page = 1,
+                onTap: () {
+                  controller.page = 1;
+                  Get.toNamed(Routes.students, id: 1);
+                },
                 child: SizedBox(
                   height: double.infinity,
                   width: 60,
@@ -90,7 +97,7 @@ class ButtomBarWidget extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () => controller.page = 2,
+                onTap: () => Get.back(id: 1),
                 child: SizedBox(
                   height: double.infinity,
                   width: 60,
