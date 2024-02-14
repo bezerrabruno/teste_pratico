@@ -31,3 +31,5 @@ Para configurar esse projeto manualmente siga os passos abaixo.
     1 - Verifique se o Flutter está na versão 3.0.0 ou maior.
     2 - Entre em 'app_mobile/lib/app/core/shared/utils/api.base.dart' e confirme o seu IP
     3 - Rode o app em AVD.
+
+# Status: Finalizado.
